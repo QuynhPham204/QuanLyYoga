@@ -24,3 +24,7 @@ dist-ssr
 *.sw?
 
 .venv/
+__pycache__/
+*.pyc
+.env
+db.sqlite3
