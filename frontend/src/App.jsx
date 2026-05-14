@@ -21,6 +21,7 @@ import AdminDashboard from "./pages/admin/Dashboard";
 import Classes from "./pages/admin/Classes";
 import Trainers from "./pages/admin/Trainers";
 import Users from "./pages/admin/Users";
+import Rooms from "./pages/admin/Rooms";
 
 // Trainer Pages
 import TrainerClasses from "./pages/trainer/TrainerClasses";
@@ -72,6 +73,7 @@ function App() {
           <Route path="classes" element={<Classes />} />
           <Route path="trainers" element={<Trainers />} />
           <Route path="users" element={<Users />} />
+          <Route path="rooms" element={<Rooms />} />
         </Route>
 
         {/* Trainer Routes */}

@@ -8,6 +8,7 @@ function Sidebar() {
     { name: "Dashboard", path: "/admin/dashboard" },
     { name: "Quản lý người dùng", path: "/admin/users" },
     { name: "Quản lý lớp học", path: "/admin/classes" },
+    { name: "Quản lý phòng", path: "/admin/rooms" },
     { name: "Huấn luyện viên", path: "/admin/trainers" },
   ];
 

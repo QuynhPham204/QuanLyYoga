@@ -39,7 +39,7 @@ function TrainerClasses() {
   return (
     <div>
       <h2 className="text-3xl font-bold text-green-600 mb-6">
-        🧘 Lớp học của tôi
+        🧘 Lớp dạy của tôi
       </h2>
 
       {Object.keys(grouped).length === 0 ? (

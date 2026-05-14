@@ -70,6 +70,9 @@ function Schedule() {
                         <p className="text-sm text-gray-600">
                           ⏰ {item.start_time} - {item.end_time}
                         </p>
+                        <p className="text-sm text-blue-600">
+                          🏠 Phòng: {item.room_name || "Chưa có phòng"}
+                        </p>
                       </div>
 
                       <div className="text-sm text-gray-500">
