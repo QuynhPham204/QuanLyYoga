@@ -26,7 +26,7 @@ function Dashboard() {
 
   const fetchOverview = async () => {
     try {
-      const res = await api.get("dashboard/member/overview/");
+      const res = await api.get("dashboard/member/");
       setOverview(res.data);
     } catch (error) {
       console.error(error);

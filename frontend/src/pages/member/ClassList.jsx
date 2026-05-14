@@ -13,7 +13,7 @@ function ClassList() {
 
   const fetchClasses = async () => {
     try {
-      const res = await api.get("classes/");
+      const res = await api.get("classes/classes/");
       const data = Array.isArray(res.data)
         ? res.data
         : res.data.results || [];

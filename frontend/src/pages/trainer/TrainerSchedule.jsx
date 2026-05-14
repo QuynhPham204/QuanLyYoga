@@ -109,14 +109,21 @@ function TrainerSchedule() {
 
   // EDIT
   const handleEdit = (item) => {
-    setEditId(item.id);
-    setForm({
-      yoga_class: item.yoga_class,
-      weekday: item.weekday,
-      start_time: item.start_time,
-      end_time: item.end_time
-    });
-  };
+  setEditId(item.id);
+
+  setForm({
+    yoga_class:
+      typeof item.yoga_class === "object"
+        ? item.yoga_class.id
+        : item.yoga_class,
+
+    weekday: item.weekday,
+
+    start_time: item.start_time,
+
+    end_time: item.end_time
+  });
+};
 
   const grouped = weekdayMap.map((day, index) => ({
     day,
@@ -223,6 +230,10 @@ function TrainerSchedule() {
                     {item.yoga_class_name}
                   </div>
 
+                  <div className="text-xs text-blue-600">
+                    Phòng: {item.room_name || "Chưa có phòng"}
+                  </div>
+
                   <div className="text-sm text-gray-600">
                     {item.start_time} - {item.end_time}
                   </div>
@@ -250,4 +261,4 @@ function TrainerSchedule() {
   );
 }
 
-export default TrainerSchedule;
+export default TrainerSchedule; 

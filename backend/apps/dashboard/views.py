@@ -96,45 +96,36 @@ class TrainerDashboardView(APIView):
 # =========================
 
 class MemberDashboardView(APIView):
-
     permission_classes = [IsAuthenticated]
 
     def get(self, request):
-
         user = request.user
 
         if user.role != "member":
-            return Response(
-                {"error": "Không có quyền"},
-                status=403
-            )
+            return Response({"error": "Không có quyền"}, status=403)
 
         today = timezone.now().date()
         weekday_today = today.weekday()
 
-        # ✅ LỚP ĐÃ ĐĂNG KÝ
         registered_classes = Enrollment.objects.filter(
             user=user,
             status="approved"
         ).values("yoga_class").distinct().count()
 
-        # ✅ LỊCH HỌC
         schedules = Schedule.objects.filter(
             yoga_class__enrollments__user=user,
             yoga_class__enrollments__status="approved"
-        )
+        ).distinct()
 
         this_week_schedule = schedules.count()
 
-        # ✅ BUỔI HÔM NAY
         today_sessions = schedules.filter(
             weekday=weekday_today
         ).count()
 
-        # ✅ ĐIỂM DANH
         total_attended_sessions = Attendance.objects.filter(
             enrollment__user=user,
-            status="Present"
+            status="present"
         ).count()
 
         return Response({

@@ -39,7 +39,7 @@ def parse_time(t):
 class ClassViewSet(viewsets.ModelViewSet):
     queryset = Class.objects.all()
     serializer_class = ClassSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAdminOrReadOnly]
 
     filter_backends = [filters.SearchFilter]
     filterset_fields = ["trainer"]
