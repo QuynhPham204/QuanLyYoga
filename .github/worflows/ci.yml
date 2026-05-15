@@ -5,11 +5,13 @@ on:
     branches:
       - main
       - dev
+      - feat/back-end
 
   pull_request:
     branches:
       - main
       - dev
+      - feat/back-end
 
 jobs:
   frontend:
