@@ -171,6 +171,7 @@ function ClassList() {
     <div>
       <h2 className="text-3xl font-bold text-green-600 mb-6">
         Danh sách lớp học
+        Danh sách lớp học
       </h2>
 
       <div className="grid md:grid-cols-3 gap-6 items-start">
