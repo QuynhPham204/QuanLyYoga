@@ -3,14 +3,12 @@ name: CI Pipeline
 on:
   push:
     branches:
-      - main
-      - dev
+      - develop
       - feat/back-end
 
   pull_request:
     branches:
-      - main
-      - dev
+      - develop
       - feat/back-end
 
 jobs:

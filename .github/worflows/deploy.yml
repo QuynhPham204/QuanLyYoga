@@ -3,7 +3,7 @@ name: CD Deploy
 on:
   push:
     branches:
-      - feat/back-end
+      - develop
 
 jobs:
   deploy:
